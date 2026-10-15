@@ -5,14 +5,15 @@ Site da Coraline (@coooraline__), tatuadora em São José dos Campos, SP. Aprese
 - Publicado em: https://azeugral.github.io/coraline-tattoo/ (com `noindex` até a aprovação)
 - Conteúdo extraído do Instagram em 15/10/2026: 124 posts e 4 destaques
 - Imagens geradas por `tools/processar.py` a partir de `../_ref/ig` (fora do repositório)
-- Fundo do hero: coroa de cybersigilismo em cromo líquido gerada por IA (Figma, gpt-image-2.5) em `assets/img/coroa.webp`, atrás do quadro decalque → pele
+- Hero: fumaça em WebGL (`assets/js/fumaca.js`) no desktop e MP4 do mesmo shader no celular (`tools/gerar_video.py` gera `assets/video/*` e o pôster)
+- Adornos cybersigilistas em cromo gerados por IA (Figma, gpt-image-2.5), com fundo transparente, em `assets/adornos/` (divisor, emblema e cantoneira, mais as versões escuras para a seção clara)
 
 ## Estrutura
 
 - `index.html`: página única (hero, trabalhos, processo, disponíveis, como agendar, sobre, estúdio e dúvidas)
 - `assets/css/coraline.css`, `assets/js/coraline.js`
 - `assets/js/obras.js`: lista de trabalhos, gerada pelo script
-- Identidade (v2, cromo gelado): preto `#07080b`, prata `#e7eaef`, ciano gelo `#8af0ff`, botões em gradiente de cromo e vermelho `#ff3b5c` só em detalhes. Logo em Grenze Gotisch, mais Unbounded, IBM Plex Sans e JetBrains Mono.
+- Identidade (v2, cromo gelado): preto `#07080b`, prata `#e7eaef`, ciano gelo `#8af0ff`, botões em gradiente de cromo e vermelho `#ff3b5c` só em detalhes. Logo em Michroma com gradiente de cromo, mais Unbounded, IBM Plex Sans e JetBrains Mono.
 
 ## CONFIRMAR com a cliente
 

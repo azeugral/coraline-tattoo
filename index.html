@@ -12,38 +12,20 @@
 <meta property="og:description" content="Anime, games e cybertribal em preto e cinza. Orçamentos pela DM.">
 <meta property="og:image" content="https://azeugral.github.io/coraline-tattoo/og.jpg">
 <meta property="og:url" content="https://azeugral.github.io/coraline-tattoo/">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-64.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/coraline.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <g id="sigilo-meio">
-      <path pathLength="1" d="M0-196C-6-120-16-50-4 0C-16 50-6 120 0 196Z"/>
-      <path pathLength="1" d="M-4 0C-50-10-120-14-188 0C-120 14-50 10-4 0Z"/>
-      <path pathLength="1" d="M-10-26C-60-40-96-70-112-128C-118-150-138-160-150-156C-128-146-126-120-120-96C-108-60-70-38-14-18Z"/>
-      <path pathLength="1" d="M-10 26C-56 44-84 80-90 130C-92 150-108 166-124 168C-104 154-100 132-98 112C-92 74-60 40-14 20Z"/>
-      <path pathLength="1" d="M-70-6C-76-20-86-30-98-34C-90-24-86-14-84-5Z"/>
-      <path pathLength="1" d="M-130-4C-134-14-142-20-150-22C-146-14-144-8-144-3Z"/>
-      <path pathLength="1" d="M-60-150L-56-138L-44-134L-56-130L-60-118L-64-130L-76-134L-64-138Z"/>
-    </g>
-    <symbol id="sigilo" viewBox="-200 -200 400 400">
-      <use href="#sigilo-meio"/>
-      <use href="#sigilo-meio" transform="scale(-1 1)"/>
-    </symbol>
-  </defs>
-</svg>
-
 <header class="topo" id="topo">
   <div class="topo-in">
     <a class="marca" href="#inicio" aria-label="Coraline Tattoo, início">
-      <svg class="marca-sig" aria-hidden="true"><use href="#sigilo"/></svg>
+      <img class="marca-sig" src="assets/adornos/emblema.webp" alt="" width="28" height="29">
       <span>Coraline</span>
     </a>
     <nav class="nav" aria-label="Seções">
@@ -72,7 +54,12 @@
 <main>
 
 <section class="hero" id="inicio">
-  <div class="hero-fundo" aria-hidden="true"></div>
+  <div class="hero-fundo" aria-hidden="true">
+    <img class="fumaca-poster" src="assets/img/fumaca-poster.webp" alt="">
+    <canvas id="fumaca"></canvas>
+    <video id="fumaca-video" muted loop playsinline preload="none" poster="assets/img/fumaca-poster.webp"
+           data-em-pe="assets/video/fumaca-celular.mp4" data-deitado="assets/video/fumaca-deitado.mp4"></video>
+  </div>
   <div class="hero-in">
     <div class="hero-txt">
       <p class="rotulo">Tatuadora · São José dos Campos</p>
@@ -93,10 +80,13 @@
     </div>
 
     <figure class="decalque" aria-label="Do decalque à tatuagem">
-      <div class="coroa" aria-hidden="true"></div>
-      <div class="decalque-quadro">
-        <div class="decalque-pilha"></div>
-        <span class="decalque-linha" aria-hidden="true"></span>
+      <div class="decalque-moldura">
+        <div class="decalque-quadro">
+          <div class="decalque-pilha"></div>
+          <span class="decalque-linha" aria-hidden="true"></span>
+        </div>
+        <img class="canto canto-a" src="assets/adornos/canto.webp" alt="" aria-hidden="true" width="640" height="657">
+        <img class="canto canto-b" src="assets/adornos/canto.webp" alt="" aria-hidden="true" width="640" height="657">
       </div>
       <figcaption>
         <span class="decalque-etapa"><b class="e1">Decalque</b><i>→</i><b class="e2">Pele</b></span>
@@ -108,6 +98,7 @@
 </section>
 
 <section class="sec" id="trabalhos">
+  <div class="adorno rv" aria-hidden="true"><img src="assets/adornos/divisor.webp" alt="" width="1400" height="327" loading="lazy" decoding="async"></div>
   <div class="wrap">
     <div class="cab rv">
       <h2>Trabalhos recentes</h2>
@@ -127,6 +118,7 @@
 </section>
 
 <section class="sec sec-processo" id="processo">
+  <div class="adorno rv" aria-hidden="true"><img src="assets/adornos/divisor.webp" alt="" width="1400" height="327" loading="lazy" decoding="async"></div>
   <div class="wrap">
     <div class="cab rv">
       <h2>Do tablet para a pele</h2>
@@ -158,6 +150,7 @@
 </section>
 
 <section class="sec" id="disponiveis">
+  <div class="adorno rv" aria-hidden="true"><img src="assets/adornos/divisor.webp" alt="" width="1400" height="327" loading="lazy" decoding="async"></div>
   <div class="wrap">
     <div class="cab rv">
       <h2>Desenhos disponíveis</h2>
@@ -184,6 +177,8 @@
   </div>
   <div class="wrap">
     <div class="precos rv">
+        <img class="canto canto-a" src="assets/adornos/canto.webp" alt="" aria-hidden="true" width="640" height="657" loading="lazy">
+        <img class="canto canto-b" src="assets/adornos/canto.webp" alt="" aria-hidden="true" width="640" height="657" loading="lazy">
       <h3>Valores de referência</h3>
       <dl>
         <div><dt>Flash até 8 cm</dt><dd>a partir de R$ 180</dd></div>
@@ -198,6 +193,7 @@
 </section>
 
 <section class="sec sec-papel" id="agendar">
+  <div class="adorno rv" aria-hidden="true"><img src="assets/adornos/divisor-escuro.webp" alt="" width="1400" height="327" loading="lazy" decoding="async"></div>
   <div class="wrap agendar">
     <div class="cab rv">
       <h2>Como agendar</h2>
@@ -216,8 +212,11 @@
 </section>
 
 <section class="sec" id="sobre">
+  <div class="adorno rv" aria-hidden="true"><img src="assets/adornos/divisor.webp" alt="" width="1400" height="327" loading="lazy" decoding="async"></div>
   <div class="wrap sobre">
     <figure class="sobre-foto rv">
+      <img class="canto canto-a" src="assets/adornos/canto.webp" alt="" aria-hidden="true" width="640" height="657" loading="lazy">
+      <img class="canto canto-b" src="assets/adornos/canto.webp" alt="" aria-hidden="true" width="640" height="657" loading="lazy">
       <img src="assets/img/coraline.webp" alt="Retrato em preto e branco da Coraline" width="900" height="900" loading="lazy" decoding="async">
     </figure>
     <div class="sobre-txt rv">
@@ -230,6 +229,7 @@
 </section>
 
 <section class="sec sec-estudio" id="estudio">
+  <div class="adorno rv" aria-hidden="true"><img src="assets/adornos/divisor.webp" alt="" width="1400" height="327" loading="lazy" decoding="async"></div>
   <div class="wrap estudio">
     <div class="estudio-txt rv">
       <h2>Onde fica</h2>
@@ -246,12 +246,15 @@
       </div>
     </div>
     <figure class="estudio-foto rv">
+      <img class="canto canto-a" src="assets/adornos/canto.webp" alt="" aria-hidden="true" width="640" height="657" loading="lazy">
+      <img class="canto canto-b" src="assets/adornos/canto.webp" alt="" aria-hidden="true" width="640" height="657" loading="lazy">
       <img src="assets/img/coraline-estudio.webp" alt="Coraline no estúdio Ink Vale" width="720" height="900" loading="lazy" decoding="async">
     </figure>
   </div>
 </section>
 
 <section class="sec" id="duvidas">
+  <div class="adorno rv" aria-hidden="true"><img src="assets/adornos/divisor.webp" alt="" width="1400" height="327" loading="lazy" decoding="async"></div>
   <div class="wrap duvidas">
     <div class="cab rv"><h2>Dúvidas</h2></div>
     <div class="faq rv">
@@ -267,9 +270,10 @@
 </main>
 
 <footer class="rodape">
+  <img class="rodape-emblema" src="assets/adornos/emblema.webp" alt="" aria-hidden="true" width="640" height="664" loading="lazy" decoding="async">
   <div class="wrap rodape-in">
     <a class="marca" href="#inicio" aria-label="Voltar ao início">
-      <svg class="marca-sig" aria-hidden="true"><use href="#sigilo"/></svg>
+      <img class="marca-sig" src="assets/adornos/emblema.webp" alt="" width="28" height="29">
       <span>Coraline</span>
     </a>
     <p>Rua Serimbura, 326, sala 2 · Vila Ema · São José dos Campos, SP</p>
@@ -291,6 +295,7 @@
   <button type="button" class="lb-seta lb-prox" aria-label="Próxima foto">→</button>
 </div>
 
+<script src="assets/js/fumaca.js"></script>
 <script src="assets/js/obras.js"></script>
 <script src="assets/js/coraline.js"></script>
 </body>

@@ -212,6 +212,57 @@
     liga(!document.hidden && r.bottom > 0 && r.top < innerHeight);
   });
 
+  /* fumaça do hero: WebGL ao vivo no desktop, MP4 do mesmo shader no toque.
+     Para quando o hero sai da tela; sem nenhuma reação ao mouse. */
+  const tela = $('#fumaca'), video = $('#fumaca-video');
+  const toque = matchMedia('(max-width: 860px), (hover: none) and (pointer: coarse)');
+  const deitado = matchMedia('(orientation: landscape)');
+  let heroVisivel = true, glAtivo = false, videoAtivo = false;
+  new IntersectionObserver(([e]) => {
+    heroVisivel = e.isIntersecting;
+    if (videoAtivo) heroVisivel && !calmo ? tocar(video) : video.pause();
+  }).observe(hero);
+  const tocar = v => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+  function trocarVideo() {
+    const src = deitado.matches || !toque.matches ? video.dataset.deitado : video.dataset.emPe;
+    if (video.getAttribute('src') !== src) video.src = src;
+    if (!calmo) tocar(video);
+  }
+  function iniciarVideo() {
+    videoAtivo = true;
+    video.addEventListener('playing', () => video.classList.add('ok'), { once: true });
+    trocarVideo();
+    deitado.addEventListener ? deitado.addEventListener('change', trocarVideo) : deitado.addListener(trocarVideo);
+  }
+  function iniciarGL() {
+    const f = window.fumacaGL && window.fumacaGL(tela);
+    if (!f) return false;
+    glAtivo = true;
+    const PERIODO = 22, RAIO = .3, ESCALA = .5;
+    const medir = () => {
+      const w = Math.max(1, Math.round(tela.clientWidth * ESCALA)), h = Math.max(1, Math.round(tela.clientHeight * ESCALA));
+      if (tela.width !== w || tela.height !== h) { tela.width = w; tela.height = h; }
+    };
+    addEventListener('resize', medir);
+    const t0 = performance.now();
+    const quadro = agora => {
+      if (heroVisivel && !toque.matches && !document.hidden) {
+        medir();
+        f.desenhar(calmo ? 1 : ((agora - t0) / 1000 / PERIODO) * Math.PI * 2, RAIO);
+        tela.classList.add('ok');
+      }
+      if (!calmo) requestAnimationFrame(quadro);
+    };
+    requestAnimationFrame(quadro);
+    return true;
+  }
+  const escolherFundo = () => {
+    if (toque.matches) { if (!videoAtivo) iniciarVideo(); }
+    else if (!glAtivo && !iniciarGL() && !videoAtivo) iniciarVideo();
+  };
+  escolherFundo();
+  toque.addEventListener ? toque.addEventListener('change', escolherFundo) : toque.addListener(escolherFundo);
+
   /* entrada */
   const entra = () => { document.documentElement.classList.add('pronto'); $$('.rv').forEach(observar); };
   (document.fonts && document.fonts.ready ? Promise.race([document.fonts.ready, new Promise(r => setTimeout(r, 500))]) : Promise.resolve())

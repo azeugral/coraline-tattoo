@@ -34,7 +34,7 @@
   /* revelar ao rolar */
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-  }), { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+  }), { rootMargin: '0px 0px 6% 0px', threshold: 0 });
   const observar = el => io.observe(el);
 
   /* grade de trabalhos */
@@ -44,7 +44,7 @@
     const li = document.createElement('li');
     li.className = 'obra rv';
     li.dataset.cat = o.cat;
-    li.style.transitionDelay = (i % 4) * 60 + 'ms';
+    li.style.transitionDelay = (i % 4) * 45 + 'ms';
     li.innerHTML = `<button type="button" aria-label="Ver fotos: ${o.titulo}">
       <div class="foto"><img src="${o.capa}" alt="${o.titulo}" width="640" height="800" loading="lazy" decoding="async">
       ${o.fotos.length > 1 ? `<span class="qtd">1/${o.fotos.length}</span>` : ''}</div>

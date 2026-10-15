@@ -5,14 +5,14 @@ Site da Coraline (@coooraline__), tatuadora em São José dos Campos, SP. Aprese
 - Publicado em: https://azeugral.github.io/coraline-tattoo/ (com `noindex` até a aprovação)
 - Conteúdo extraído do Instagram em 15/10/2026: 124 posts e 4 destaques
 - Imagens geradas por `tools/processar.py` a partir de `../_ref/ig` (fora do repositório)
-- Fundo do hero: textura gerada por IA (Figma, Gemini) em `assets/img/fundo-hero*.webp`
+- Fundo do hero: coroa de cybersigilismo em cromo líquido gerada por IA (Figma, gpt-image-2.5) em `assets/img/coroa.webp`, atrás do quadro decalque → pele
 
 ## Estrutura
 
 - `index.html`: página única (hero, trabalhos, processo, disponíveis, como agendar, sobre, estúdio e dúvidas)
 - `assets/css/coraline.css`, `assets/js/coraline.js`
 - `assets/js/obras.js`: lista de trabalhos, gerada pelo script
-- Identidade: tinta `#0c0b0f`, papel `#eeeae3`, violeta do decalque `#6b55ff` e vermelho `#e23a4f` só em detalhes. Logo em Grenze Gotisch, mais Unbounded, IBM Plex Sans e JetBrains Mono.
+- Identidade (v2, cromo gelado): preto `#07080b`, prata `#e7eaef`, ciano gelo `#8af0ff`, botões em gradiente de cromo e vermelho `#ff3b5c` só em detalhes. Logo em Grenze Gotisch, mais Unbounded, IBM Plex Sans e JetBrains Mono.
 
 ## CONFIRMAR com a cliente
 
